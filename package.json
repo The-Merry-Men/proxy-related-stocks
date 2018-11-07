@@ -1,0 +1,28 @@
+{
+  "name": "proxy-related-stocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Merry-Men/proxy-related-stocks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Merry-Men/proxy-related-stocks/issues"
+  },
+  "homepage": "https://github.com/The-Merry-Men/proxy-related-stocks#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-proxy": "^1.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+  }
+}
