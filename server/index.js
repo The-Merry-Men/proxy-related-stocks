@@ -7,10 +7,10 @@ console.log('hi')
 
 app.use(express.static(`${__dirname}/../public`));
 
-var ServerOne = 'http://localhost:3001',
-    ServerTwo = 'http://localhost:3009'
-    ServerThree = 'http://localhost:3004',
-    ServerFour = 'http://localhost:3000';
+var ServerOne = 'http://localhost:3001';
+var ServerTwo = 'http://localhost:3009';
+var ServerThree = 'http://localhost:3004';
+var ServerFour = 'http://localhost:3000';
  
 app.all('/stocks/1', function(req, res) {
     console.log('redirecting to Server1 alan');
@@ -26,32 +26,32 @@ app.all('/companies/1', function(req, res) {
     });
 });
 
-app.all('/companiesKatie/1', function(req, res) {
+app.all('/companiesKatie/:id', function(req, res) {
     console.log('redirecting to Server2 katie');
     apiProxy.web(req, res, {
         target: ServerTwo
     });
 });
 
-app.all('/company/1', function(req, res) {
+app.all('/company/8', function(req, res) {
+    console.log('redirecting to Server3 jonathan');
+    apiProxy.web(req, res, {
+        target: ServerFour
+    });
+});
+
+
+app.all('/stocks/:id', function(req, res) {
     console.log('redirecting to Server3 jim');
     apiProxy.web(req, res, {
         target: ServerThree
     });
 });
 
-
-app.all('/stocks/1', function(req, res) {
-    console.log('redirecting to Server3 jim');
+app.all('/companiesJim/:id', function(req, res) {
+    console.log('redirecting to Server4 jim ');
     apiProxy.web(req, res, {
-        target: ServerThree 
-    });
-});
-
-app.all('/companiesJim/1', function(req, res) {
-    console.log('redirecting to Server4 jonathan ');
-    apiProxy.web(req, res, {
-        target: ServerFour
+        target: ServerThree
     });
 });
 
